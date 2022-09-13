@@ -5,7 +5,7 @@ sock = socket.socket()
 server_address = ('', 9090)
 
 
-def _connect():
+def _connect() -> None:
     try:
         sock.connect(server_address)
     except ConnectionRefusedError:
