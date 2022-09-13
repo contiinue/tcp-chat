@@ -30,10 +30,12 @@ class Server:
         """ server  """
         self._append_client_to_list(writer)
         connect_from = self._get_connect_info(writer)
+        print(f'>>> New connect: {connect_from}')
 
         while True:
             data = await reader.read(100)
             if not data:
+                print(f'>>> connect close: {connect_from}')
                 writer.close()
                 break
 
